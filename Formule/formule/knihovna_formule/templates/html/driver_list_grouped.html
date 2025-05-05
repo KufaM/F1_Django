@@ -1,0 +1,20 @@
+<h1>Drivers Sorted by TEAM</h1>
+
+{% for group in data %}
+  <h2>{{ group.team.name }} ({{ group.team.country }})</h2>
+  <div style="display: flex; gap: 40px; margin-bottom: 20px;">
+    {% for driver in group.drivers %}
+      <div style="text-align: center;">
+        {% if driver.image %}
+          <img src="{{ driver.image.url }}" width="150" style="border-radius: 8px;"><br>
+        {% else %}
+          <div style="width:150px; height:200px; background:#ddd; line-height:200px;">No picture inserted</div>
+        {% endif %}
+        <strong>{{ driver.first_name }} {{ driver.last_name }}</strong><br>
+        #{{ driver.number }} – {{ driver.nationality }}
+      </div>
+    {% endfor %}
+  </div>
+{% endfor %}
+
+<a href="{% url 'index' %}">Back</a>
