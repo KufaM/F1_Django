@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Formule 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            color: #333;
+            margin: 0;
+            padding: 40px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #d10000;
+        }
+        .menu {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .card {
+            background: white;
+            padding: 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        a {
+            text-decoration: none;
+            color: #d10000;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>F1</h1>
+    <div class="menu">
+        <div class="card">
+            <a href="{% url 'driver_list_grouped' %}">Drivers</a>
+        </div>
+        <div class="card">
+           <a href="{% url 'team_list' %}">Teams</a>
+        </div>
+        <div class="card">
+            <a href="{% url 'track_list' %}">Race Circuits</a>
+        </div>
+    </div>
+</body>
+</html>
