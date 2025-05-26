@@ -1,0 +1,13 @@
+<h1>F1 Racetracks</h1>
+<div style="display: flex; gap: 40px; margin-bottom: 20px; width: 100%; ", class="row">
+
+{% for track in tracks %}
+ <div style="margin-bottom: 30px;", class="col-md-2">
+    {% if track.image %}
+      <img src="{{ track.image.url }}" width="200"><br>
+    {% endif %}
+    <strong>{{ track.name }}</strong> – {{ track.country }}, {{ track.length_km }} km
+  </div>
+{% endfor %}
+</div>
+<a href="{% url 'index' %}">Back</a>
